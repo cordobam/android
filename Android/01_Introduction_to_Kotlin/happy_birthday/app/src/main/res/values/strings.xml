@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Happy Birthday</string>
+    <string name="feliz_cumple_text">Feliz Cumpleaños Mariano!</string>
+    <string name="firma">De Parte de Mariano</string>
+    <string name="imagen_pastel">Imagen de un pastel</string>
+</resources>
