@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/costo_de_servicio"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="Costo del Servicio"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/como_estuvo_el_servicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/costo_de_servicio" />
+
+    <RadioGroup
+        android:id="@+id/tip_opciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/opcion_veinte_por_ciento"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_service">
+
+        <RadioButton
+            android:id="@+id/opcion_veinte_por_ciento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asombrosa (20%)" />
+
+        <RadioButton
+            android:id="@+id/opcion_dieciocho_por_ciento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buena (18%)" />
+
+        <RadioButton
+            android:id="@+id/opcion_quince_por_ciento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptable (15%)" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/switch_redondeo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Redondear propina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip_opciones" />
+
+    <Button
+        android:id="@+id/boton_calcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_redondeo" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Total de propina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_calcular" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

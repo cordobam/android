@@ -1,0 +1,189 @@
+#################
+clases en kotlin
+#################
+
+https://developer.android.com/codelabs/basic-android-kotlin-training-classes-and-inheritance?continue=https%3A%2F%2Fdeveloper.android.com
+%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs
+%2Fbasic-android-kotlin-training-classes-and-inheritance#1
+
+- Jerarquía de clases: Disposición en la que las clases se organizan en una jerarquía de elementos superiores 
+ y secundarios (por lo general, los diagramas de jerarquía se dibujan con los elementos superiores arriba de los secundarios)
+- Elemento secundario o subclase: Cualquier clase que esté debajo de otra clase en la jerarquía
+- Clase superior, superclase o clase base: Cualquier clase con una o más clases secundarias
+- Clase raíz o de nivel superior: Clase en la parte superior (o raíz) de la jerarquía de la clase
+- Herencia: Se da cuando una clase secundaria incluye (o hereda) todas las propiedades y los métodos de su clase superior 
+ (esto le permite compartir y reutilizar código, lo que facilita la comprensión y el mantenimiento de los programas)
+
+
+#####################
+sublcases (herencia)
+#####################
+
+error: is not abstract and does not implement abstract base class member public abstract val buildingMaterial: String defined in Dwelling
+
+Cuando declaras funciones y variables abstractas, lo que haces es como una promesa de que les 
+darás valores e implementaciones más adelante. Para una variable, significa que cualquier 
+subclase de esa clase abstracta debe darle un valor. Para una función, 
+significa que cualquier subclase necesita implementar el cuerpo de la función.
+
+Este seria el constructor de la clase
+
+- Usa with para simplificar tu código
+
+En las sentencias println(), cada vez que hagas referencia a una propiedad o función de squareCabin, 
+observa que debes repetir squareCabin.. Esto se vuelve repetitivo y puede ser una fuente de errores 
+cuando copias y pegas sentencias de impresión.
+
+Cuando trabajas con una instancia específica de una clase y necesitas acceder a varias propiedades y 
+funciones de esa instancia, puedes decir "haz todas las siguientes operaciones con este objeto de instancia" 
+usando una sentencia with. Comienza con la palabra clave with, seguida del nombre de la instancia entre paréntesis, 
+seguido de llaves que contienen las operaciones que deseas realizar.
+
+error: This type is final, so it cannot be inherited from
+
+Este error significa que no se puede crear (ni heredar) una subclase de la clase RoundHut. 
+De manera predeterminada, en Kotlin, las clases son definitivas y no pueden crearse en subclases de ellas. 
+Solo podrás heredar de las clases abstract o clases marcadas con la palabra clave open. Por lo tanto, debes 
+marcar la clase RoundHut con la palabra clave open a fin de permitir que se pueda heredar de ella
+
+####################
+jerarquia de clases
+####################
+
+Todos los métodos abstractos definidos en una clase abstracta deben implementarse en cualquiera de sus subclases. 
+Para poder ejecutar tu código, debes implementar floorArea() en las subclases.
+
+
+En este codelab aprendiste a hacer lo siguiente:
+
+    -Crear una jerarquía de clases, que es un árbol de clases en las que los elementos secundarios heredan la funcionalidad de las clases superiores (las propiedades y funciones se heredan mediante subclases)
+    -Crear una clase abstract en la que las subclases implementen algunas de sus funciones (por lo tanto, no se puede crear una instancia de una clase abstract)
+    -Crear subclases de una clase abstract
+    -Usar la palabra clave override a fin de anular las propiedades y funciones en las subclases
+    -Usar la palabra clave super para hacer referencia a funciones y propiedades en la clase superior
+    -Crear una clase open que pueda ser una subclase
+    -Crear una propiedad private de modo que solo se pueda usar dentro de la clase
+    -Usar la construcción with a efectos de realizar varias llamadas en la misma instancia de objeto
+    -Importar funciones desde la biblioteca kotlin.math
+
+https://developer.android.com/codelabs/basic-android-kotlin-training-classes-and-inheritance?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-classes-and-inheritance#7
+
+####
+xml
+####
+
+La IU de una app para Android se compila como una jerarquía de contención de componentes (widgets) y 
+de los diseños en pantalla de esos componentes. Ten en cuenta que estos diseños son componentes de la IU en sí mismos.
+
+Serás tú quien describa la jerarquía de vistas de los elementos de la IU en la pantalla. 
+Por ejemplo, un ConstraintLayout (el elemento superior) puede contener Buttons, TextViews, ImageViews u otras vistas 
+(los elementos secundarios). Recuerda que ConstraintLayout es una subclase de ViewGroup. Te permitirá posicionar 
+o dimensionar las vistas secundarias de manera flexible.
+
+
+Cada elemento de la IU está representado por un elemento XML en el archivo en formato XML. 
+Cada elemento comienza y termina con una etiqueta, y cada etiqueta comienza con un < y termina con un >. 
+Así como puedes establecer atributos sobre los elementos de la IU mediante el editor de diseño (vista de diseño), 
+los elementos XML también pueden tener atributos
+
+
+#####################################
+Etiquetas, elementos y atributos XML
+#####################################
+
+activity_main.xml (res > layout > activity_main.xml)
+
+
+La línea con <TextView es el inicio de la etiqueta y la línea con /> es el final de ella. La línea 
+con android:text="Hello World!" es un atributo de la etiqueta. Representa el texto que mostrará la TextView. 
+Estas 3 líneas son una abreviatura de uso frecuente denominada etiqueta de elemento vacío
+
+El elemento ConstraintLayout se escribe con etiquetas de inicio y fin separadas, 
+ya que debe ser capaz de contener otros elementos dentro de él. Esta es una versión simplificada del elemento 
+ConstraintLayout que contiene el elemento TextView
+
+La etiqueta ConstraintLayout dice androidx.constraintlayout.widget.ConstraintLayout en lugar de solo ConstraintLayout, como la TextView.
+ Esto se debe a que ConstraintLayout es parte de Android Jetpack, que contiene bibliotecas de código que ofrecen funciones 
+adicionales además de la plataforma principal de Android. Jetpack tiene funcionalidades útiles que puedes aprovechar 
+a fin de facilitar la compilación de apps. Reconocerás que este componente de la IU es parte de Jetpack porque comienza con "androidx"
+
+Es posible que hayas notado las líneas que comienzan con xmlns:, seguidas de android, app y tools.
+
+El xmlns se refiere al espacio de nombres XML, y cada línea define un esquema o vocabulario para atributos 
+relacionados con esas palabras. El espacio de nombres android:, por ejemplo, marca atributos definidos por el sistema Android. 
+Todos los atributos del XML del diseño comienzan con uno de esos espacios de nombres.
+
+El nombre de las restricciones sigue el formato layout_constraint<Source>_to<Target>Of, en el que <Source> 
+hace referencia a la vista actual. <Target> hace referencia al borde de la vista de destino a la que se está 
+restringiendo la vista actual, ya sea el contenedor superior o alguna otra vista.
+
+Un ID de recurso es un nombre de recurso único para el elemento. Cuando agregas una View o cualquier otro 
+recurso con el editor de diseño, Android Studio les asigna automáticamente un ID de recurso. Cuando escribes 
+manualmente el XML, debes declarar de manera explícita el ID de recurso. Los nuevos ID de vista del archivo en 
+formato XML se deben definir con el prefijo @+id, que indica a Android Studio que agregue ese ID como un nuevo ID de recurso.
+Elige nombres descriptivos para los recursos de modo que sepas a qué elementos hacen referencia. No obstante, 
+deberán estar escritos en letras minúsculas, y las distintas palabras deberán separarse con un guion bajo.
+Cuando hagas referencia a ID de recursos en el código de tu app, usa R.<type>.<name>. Por ejemplo, R.string.roll. 
+En el caso de los ID de View, el <type> es id. Por ejemplo, R.id.button.
+
+En el RadioGroup, establece el atributo android:checkedButton en @id/option_twenty_percent
+
+Como se señaló con anterioridad, no puedes establecer match_parent en los elementos de la IU de un ConstraintLayout. 
+En cambio, deberás limitar los bordes inicial y final de la vista, y establecer el ancho en 0dp(poner endof en parent). 
+Si estableces el ancho en 0dp, le indicarás al sistema que no calcule el ancho, 
+sino que solo intente hacer coincidir las restricciones presentes en la vista.
+
+########################################################
+Cómo implementar prácticas recomendadas de codificación
+########################################################
+
+Haz clic en una string. Coloca el cursor sobre el ícono de bombilla amarilla que aparece y 
+luego haz clic en el triángulo que aparece a su lado. Selecciona Extract String Resource. 
+Los nombres predeterminados de los recursos de strings están bien. Si quieres, para las opciones de propina, 
+puedes usar amazing_service, good_service y okay_service de modo que los nombres resulten más descriptivos.
+
+app > res > values > strings.xml poner todas las strings ahi
+
+ejemplo
+
+<resources>
+    <string name="app_name">Tip Time</string>
+    <string name="cost_of_service">Cost of Service</string>
+    <string name="how_was_the_service">How was the service?</string>
+    <string name="amazing_service">Amazing (20%)</string>
+    <string name="good_service">Good (18%)</string>
+    <string name="ok_service">Okay (15%)</string>
+    <string name="round_up_tip">Round up tip?</string>
+    <string name="calculate">Calculate</string>
+    <string name="tip_amount">Tip Amount</string>
+</resources>
+
+
+Android Studio proporciona varias herramientas para ordenar tu código y garantizar que cumpla con las convenciones de programación recomendadas.
+
+    En activity_main.xml, elige Edit > Select All.
+    Selecciona Code > Reformat Code.
+
+Esto asegurará que la sangría sea coherente y quizás reorganice algunos de los XML de los elementos de la IU con el 
+fin de agrupar las cosas, por ejemplo, uniendo todos los atributos android: de un elemento.
+
+#######
+Resumen
+#######
+
+    -El XML (lenguaje de marcación extensible) es una forma de organizar el texto, formado por etiquetas, elementos y atributos.
+    -Usa XML a efectos de definir el diseño de una app para Android.
+    -Usa EditText a fin de permitir al usuario ingresar o editar texto.
+    -Un EditText puede contar con una sugerencia que le indique al usuario lo que se espera ingresar en ese campo.
+    -Especifica el atributo android:inputType para limitar el tipo de texto que el usuario puede ingresar en un campo EditText.
+    -Haz una lista de opciones exclusivas con RadioButtons, agrupadas con un RadioGroup.
+    -Un RadioGroup puede ser vertical u horizontal, y puedes especificar qué RadioButton debe aparecer seleccionado inicialmente.
+    -Usa un Switch con el fin de permitir que el usuario active o desactive dos opciones.
+    -Puedes agregar una etiqueta a un Switch sin usar una TextView independiente.
+    -Cada elemento secundario de un ConstraintLayout debe tener restricciones verticales y horizontales.
+    -Usa las restricciones de "inicio" y "fin" para controlar los idiomas que se leen de izquierda a derecha (LTR) y de derecha a izquierda (RTL).
+    -Los nombres de los atributos de restricción siguen el formato layout_constraint<Source>_to<Target>Of.
+    -Para hacer que una View sea tan ancha como el ConstraintLayout en el que se encuentra, restringe el inicio 
+    y el fin a aquellos del elemento superior y establece el ancho en 0 dp.
+
+https://developer.android.com/codelabs/basic-android-kotlin-training-xml-layouts?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-xml-layouts#9
